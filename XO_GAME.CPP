@@ -14,9 +14,9 @@ char arr[10]={'0','1','2','3','4','5','6','7','8','9'};
 
 int rev(int a){
     int rev=0;
-    while(a!=0){
-        rev = rev*10 + a%10;
-        a = a/10;
+    while(a>0){
+        rev *= 10 + a%10;
+        a /= 10;
     }
     return rev;
 }
@@ -78,7 +78,7 @@ void game(MYSQL *conn,int solution=0){
             int sss=solution%10;
             cout<<sss<<endl;
             op=sss;
-            solution=solution/10;
+            solution/=10;
         }
         //cout<<endl;
 
@@ -241,5 +241,3 @@ int main(){
     }
     return 0;
 }
-
-
